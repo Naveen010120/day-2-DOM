@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 330px;
+            height: 330px;
+           
+           border: 2px solid black;
+           background-color: burlywood;
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+        }
+        
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* display: block; */
+        }
+       
+        img{
+            width: 100px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="clickon()" id="btn">click on me</button>
+    <script>
+        function clickon(){
+        let div=document.createElement("div");
+        div.className="container";
+        document.body.appendChild(div);
+        let img=document.createElement('img');
+        img.src="../medium.webp"
+        div.appendChild(img)
+        let data=["name:cat","rollno:123","phno:268820","address:hyderabad"]
+        for(let value of data){
+            let text=document.createElement('p');
+            text.innerHTML=value;
+
+            div.appendChild(text)
+        }
+        let btn=document.getElementById('btn');
+        // btn.style.display="none"
+        btn.remove();
+        }
+    </script>
+</body>
+</html>
